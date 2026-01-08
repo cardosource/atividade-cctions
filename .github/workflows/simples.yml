@@ -1,5 +1,5 @@
-name: Teste simples
-run-name: Iniciando  
+name: pipeline...
+run-name: Pipeline CI  
 
 on:
   push: 
