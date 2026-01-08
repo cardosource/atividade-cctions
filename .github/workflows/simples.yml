@@ -1,47 +1,43 @@
 name: Teste simples
-run-name: Pipeline automático
+run-name: Iniciando
 
 on:
   push:
-    paths-ignore:
-      - README.md
 
 permissions:
   contents: write
 
 jobs:
   setup:
-    name: Setup 
+    name: 🔧 Setup
     runs-on: ubuntu-latest
     steps:
+      - name: 📥 Checkout
         uses: actions/checkout@v4
-      - name: Instalar Node
+
+      - name: 🟢 Instalar Node
         uses: actions/setup-node@v6
         with:
           node-version: 24
 
   teste:
-    name:  Test
+    name: 🧪 Teste
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: Instalar Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-
-      - name: Testar instalação
+      - name: 🔍 Verificar Node
         run: |
           node --version
           npm --version
 
   executar:
-    name: Executar 
+    name: ▶️ Executar
     needs: teste
     runs-on: ubuntu-latest
     steps:
+      - name: 📥 Checkout
         uses: actions/checkout@v4
-      - name: Executar arquivo
-        run: |
-          node higher_order_function.js > resultado.txt
+
+      - name: ▶️ Executar script
+        run: node higher_order_function.js
 
