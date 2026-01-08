@@ -1,5 +1,5 @@
 name: Teste simples.
-run-name: uniciando
+run-name: Iniciando
 
 
 on: [push,workflow_dispatch]
@@ -8,6 +8,9 @@ jobs:
   on-push:
     runs-on: ubuntu-latest
     steps:
+      - name: baixar código do repositório
+        uses: actions/checkout@v4
+      
       - name: instalando node
         uses: actions/setup-node@v6
         with:
