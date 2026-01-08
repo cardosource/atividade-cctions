@@ -1,11 +1,9 @@
 name: Teste simples
-run-name: Iniciando
+run-name: Iniciando  
 
 on:
-  push:
-
-permissions:
-  contents: write
+  push: 
+    branches: [main]
 
 jobs:
   setup:
@@ -18,24 +16,38 @@ jobs:
       - name: Instalar Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: '24'
 
   test:
     name: Test
-    needs: setup
+    needs: setup  
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout também aqui
+        uses: actions/checkout@v4  
+      
+      - name: Setup Node também aqui
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      
       - name: Verificar Node
-        run: |
+        run: |  
           node --version
           npm --version
 
   execut:
     name: Run
-    needs: test
+    needs: test 
     runs-on: ubuntu-latest 
     steps:
-      - name: Executar script
+      - name: Checkout código
         uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      
+      - name: Executar script  
         run: node higher_order_function.js
-
