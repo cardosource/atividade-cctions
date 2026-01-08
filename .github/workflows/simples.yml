@@ -9,19 +9,18 @@ permissions:
 
 jobs:
   setup:
-    name: 🔧 Setup
+    name: Setup
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout
         uses: actions/checkout@v4
-
-      - name: 🟢 Instalar Node
+      - name: Instalar Node
         uses: actions/setup-node@v6
         with:
           node-version: 24
 
-  teste:
-    name: 🧪 Teste
+  test:
+    name: Teste
+    runs-on: ubuntu-latest
     needs: setup
     steps:
       - name: 🔍 Verificar Node
@@ -30,9 +29,10 @@ jobs:
           npm --version
 
   executar:
-    name: ▶️ Executar
+    name: Executar
+    runs-on: ubuntu-latest
     needs: teste
     steps:
-      - name: ▶️ Executar script
+      - name: Executar script
         run: node higher_order_function.js
 
