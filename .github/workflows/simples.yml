@@ -1,0 +1,21 @@
+name: Teste simples.
+run-name: uniciando
+
+on: [push,workflow_dispatch]
+
+jobs:
+  on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: instalando node
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'npm'
+      - name: testando node
+      - run: |
+         node --version
+         npm --version
+      - name: executando arquivo
+      - run: |
+          node higher_order_function.js
