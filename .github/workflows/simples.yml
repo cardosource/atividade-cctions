@@ -23,7 +23,6 @@ jobs:
   teste:
     name: 🧪 Teste
     needs: setup
-    runs-on: ubuntu-latest
     steps:
       - name: 🔍 Verificar Node
         run: |
@@ -33,11 +32,7 @@ jobs:
   executar:
     name: ▶️ Executar
     needs: teste
-    runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@v4
-
       - name: ▶️ Executar script
         run: node higher_order_function.js
 
