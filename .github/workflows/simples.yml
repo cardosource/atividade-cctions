@@ -3,7 +3,8 @@ run-name: Iniciando
 
 on:
   push: 
-    branches: [main]
+    branches:
+      main
 
 jobs:
   setup:
