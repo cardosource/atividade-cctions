@@ -33,9 +33,9 @@ jobs:
   run:
     name: Run
     needs: test
-    runs-on: ubuntu-latest
-    uses: actions/checkout@v4
+    runs-on: ubuntu-latest 
     steps:
       - name: Executar script
+        uses: actions/checkout@v4
         run: node higher_order_function.js
 
