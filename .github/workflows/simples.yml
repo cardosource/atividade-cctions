@@ -27,10 +27,11 @@ jobs:
          node --version
          npm --version
        
+      
       - name: Escrevendo no readme
         run: |
-            echo "resultado da execução do script" > README.md
-            node higher_order_function.js >  README.md
+            echo "resultado da execução do script : " >> README.md
+            node higher_order_function.js >>  README.md
 
       - name: commit automatico
         run: |
