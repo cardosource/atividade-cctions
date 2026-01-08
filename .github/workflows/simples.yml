@@ -30,7 +30,7 @@ jobs:
           node --version
           npm --version
 
-  run:
+  execut:
     name: Run
     needs: test
     runs-on: ubuntu-latest 
