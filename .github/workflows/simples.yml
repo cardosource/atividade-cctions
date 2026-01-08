@@ -1,7 +1,8 @@
 name: Teste simples.
 run-name: uniciando
 
-on: [push]
+
+on: [push,workflow_dispatch]
 
 jobs:
   on-push:
