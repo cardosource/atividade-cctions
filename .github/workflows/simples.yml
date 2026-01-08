@@ -21,7 +21,7 @@ jobs:
           node-version: 24
 
   test:
-    name: Teste
+    name: Test
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -31,9 +31,10 @@ jobs:
           npm --version
 
   run:
-    name: Executar
+    name: Run
     needs: test
     runs-on: ubuntu-latest
+    uses: actions/checkout@v4
     steps:
       - name: Executar script
         run: node higher_order_function.js
