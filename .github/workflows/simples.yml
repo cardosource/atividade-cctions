@@ -2,7 +2,7 @@ name: Teste simples.
 run-name: Iniciando
 
 
-on: [push,workflow_dispatch]
+on: [push]
 
 jobs:
   on-push:
