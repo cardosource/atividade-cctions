@@ -10,7 +10,7 @@ permissions:
 
 
 jobs:
-  on-push:
+  on-push: teste simples
     runs-on: ubuntu-latest
     steps:
       - name: baixar código do repositório
